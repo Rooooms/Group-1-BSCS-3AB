@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +13,22 @@
 <body>
     
     <section class="signup">
-
     <h2>Sign Up</h2>
-
     <form action="include/login.inc.php" method="post">
         <input type="text" name="uid" placeholder="User Name/Email"><br>
         <input type="password" name= "pwd" placeholder="Password"> <br>
         <button type="submit" name="submit">login</button>
     </form>
+    <?php
+if (isset($_GET["error"])) {
+    if($_GET["error"]=="emptyinput"){
+        echo "<p>Fill up all the fields!</p>";
+    }
+    else if ($_GET["error"]=="wronglogin"){
+        echo "<p>Incorrect Login Information!</p>";    
+}
+}
+?>
     </section>
 </body>
 </html>
