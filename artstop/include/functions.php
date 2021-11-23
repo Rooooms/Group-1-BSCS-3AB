@@ -50,7 +50,7 @@ function uidExist($conn, $username, $email){
     $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
     $stmt= mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: ../register.php?error=stmtfailed");
+        header("location: ../frontend.php?error=stmtfailed");
         exit();
     }
     mysqli_stmt_bind_param($stmt, "ss", $username, $email);
@@ -72,7 +72,7 @@ function createUser($conn, $name, $email, $username, $pwd, $category){
     $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd, usersCategory) VALUES(?, ?, ?, ?, ?);";
     $stmt= mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header ("location: ../register.php?error=stmtfailed");
+        header ("location: ../frontend.php?error=stmtfailed");
         exit();
     }
    
@@ -82,7 +82,7 @@ function createUser($conn, $name, $email, $username, $pwd, $category){
     mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $username, $hashedPwd, $category);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../register.php?error=none");
+    header("location: ../frontend.php?error=none");
     exit();
  
 }
@@ -104,7 +104,7 @@ function loginUser($conn, $username, $pwd){
     $uidExist= uidExist($conn, $username, $username);
 
     if($uidExist==false){
-        header("location: ../login.php?error=wronglogin");
+        header("location: ../frontend.php?error=wronglogin");
         exit();
     }
     
@@ -112,7 +112,7 @@ function loginUser($conn, $username, $pwd){
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if($checkPwd === false){
-        header("location: ../login.php?error=wronglogin");
+        header("location: ../frontend.php?error=wronglogin");
         exit();
     }
     else if($checkPwd === true){
