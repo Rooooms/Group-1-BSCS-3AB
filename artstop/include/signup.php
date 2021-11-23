@@ -1,5 +1,6 @@
 <?php
 
+
 if (isset($_POST["submit"])){
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -12,23 +13,23 @@ if (isset($_POST["submit"])){
     require_once 'functions.php';
 
     if(emptyInputSignup($name, $email, $username, $pwd, $pwdrepeat, $category) !== false){
-    header("location: ../register.php?error=emptyinput");
+    header("location: ../frontend.php?error=emptyinput");
     exit();
     }
     if(invalidUid($username) !== false){
-        header("location: ../register.php?error=invaliduid");
+        header("location: ../frontend.php?error=invaliduid");
         exit();
     }  
     if(invalidEmail($email) !== false){
-         header("location: ../register.php?error=invalidemail");
+         header("location: ../frontend.php?error=invalidemail");
          exit();
     }
     if(pwdMatch($pwd, $pwdrepeat) !== false){
-        header("location: ../register.php?error=passwordnotmatch");
+        header("location: ../frontend.php?error=passwordnotmatch");
         exit();
    } 
    if(uidExist($conn, $username, $email) !== false){
-    header("location: ../register.php?error=usernametaken");
+    header("location: ../frontend.php?error=usernametaken");
     exit();
    }
    
@@ -40,7 +41,7 @@ if (isset($_POST["submit"])){
                    
 }
 else{
-    header("location: ../register.php");
+    header("location: ../frontend.php");
     exit();
 }
 
