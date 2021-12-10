@@ -11,10 +11,6 @@ class UsersModel extends CI_Model {
 
     public function createUser($data){
 		
-		/* if(empty($first_name) || empty($last_name) || empty($email) || empty($username) || empty($password) || empty($password_repeat)){
-			echo "noInput";
-			return;
-		} */
 		if($this->uidExist($data['usersUid'])){
 			echo "uidE";
 			return;
@@ -28,7 +24,6 @@ class UsersModel extends CI_Model {
 			return;
 		}
 		else{
-			/* $data['user_pwd'] = password_hash($data['user_pwd'], PASSWORD_DEFAULT); */
 			$data['usersPwd'] = md5($data['usersPwd']);
 			unset($data['usersRptPwd']);
 			$this->db->insert($this->table, $data);

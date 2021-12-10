@@ -13,8 +13,9 @@ class Users extends CI_Controller {
 		if(isset($data) && $data != null){
 			$this->load->model('usersModel');
 			$this->usersModel->createUser($data);
+			$this->load->view('users/signup');
 		}
-		$this->load->view('view/index');
+		$this->load->view('users/signup');
 	}
 	
 	public function login(){
@@ -30,12 +31,23 @@ class Users extends CI_Controller {
 			else{
 				$_SESSION['usersId'] = $return[0]['usersId'];
 				$_SESSION['usersUid'] = $return[0]['usersUid'];
-				redirect('users/signup');
+				redirect('users/homepage');
 			}
 		}
 
 		$this->load->view('users/login');
-	}	
+	}
+	
+	public function landing(){
+		$this->load->view('users/landing');
+	}
+	public function homepage(){
+		$this->load->view('homepage/homepage');
+	}
+	public function logout(){
+        session_destroy();
+        redirect(base_url());
+    }
 }
     
    

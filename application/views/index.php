@@ -3,7 +3,7 @@
 ?>
 
 <?php
-    $this->load->view('users/signup');
+    $this->load->view('users/landing');
 
 ?>
 
