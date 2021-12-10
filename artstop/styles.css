@@ -1,0 +1,341 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Syne', sans-serif;
+    background: #163A24;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* margin: -20px 0 50px; */
+}
+
+.container{
+    background: #f0ecd7;
+    border-radius: 15px;
+    width: 1200px;
+    max-width: 100%;
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.sign-up-container{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* ======== SIGN-IN & SIGN-UP FORM STYLES ========*/
+
+.title{
+    font-size: 1.8rem;
+    color: #163A24;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+input{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.input-field{
+    max-width: 380px;
+    width: 100%;
+    height: 50px;
+    background-color: #1B8436;
+    margin: 5px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+}
+
+.input-field i{
+    text-align: center;
+    line-height: 50px;
+    color: #f0ecd7;
+    font-size: 1rem;
+}
+
+.input-field input{
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #f0ecd7;
+    padding: 0 20px 0 0;
+    letter-spacing: 1px;
+}
+
+.input-field input::placeholder{
+    color: #f0ecd7;
+    opacity: 90%;
+    font-weight: 500;
+    letter-spacing: 0px;
+}
+
+.btn{
+    font-family: 'Syne', sans-serif;
+    width: 380px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    cursor: pointer;
+    background-color: #163A24;
+    color: #f0ecd7;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 5px 0;
+    transition: 0.4s;
+    letter-spacing: 2px;
+}
+
+.btn:hover{
+    background-color: #E48928;
+    color: #163A24;
+}
+
+.btn:active{
+    transform: scale(0.95);
+}
+
+.btn:focus{
+    outline: none;
+}
+
+/* .btn input[type="submit"]{
+    transition: 0.5s ease-in-out;
+} */
+
+/* ======== RADIO BUTTON STYLES ========*/
+
+.chooseAccount{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #163A24;
+    margin: 5px 0;
+}
+
+.radio-input{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 380px;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.radio-input i{
+    color: #f0ecd7;
+    font-size: 1rem;
+    line-height: 55px;
+}
+
+input[type="radio"]{
+	-webkit-appearance:none;
+}
+
+label{
+	height: 50px;
+	width: 380px;
+	border-radius: 55px;
+    background-color: #1B8436;
+	transition: 0.5s;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sellerRadio{
+    margin-right: 10px;
+}
+
+label>span{
+	font-size: 1.1rem;
+    font-family: 'Quicksand', sans-serif;
+	font-weight: 700;
+    margin-left: 10px;
+    color: #f0ecd7;
+}
+
+input[type="radio"]:checked + label{
+	background: linear-gradient(to left, #F9BD38 0%, #E48928 30%, #F0703E 100%);
+    transform: scale(0.95);
+    color: #163A24;
+}
+
+
+/* ======== OVERLAY STYLES ========*/
+
+.overlay-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.overlay{
+    /* background: radial-gradient(#F0703E 20%, #E48928 50%, #F9BD38 90%); */
+    background-image: url("./img/overlay-bg-01.svg");
+    background-repeat: none;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative; 
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.overlay-left{
+    transform: translateX(-20%);
+}
+
+.overlay-title{
+    font-size: 3rem;
+    color: #163A24;
+    font-family: 'Fredoka One';
+}
+
+.overlay-description{
+    font-family: 'Quicksand';
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 5px 0;
+    padding: 0 50px;
+    text-align: center;
+    color: #f0ecd7;
+}
+
+button{
+    font-family: 'Syne', sans-serif;
+    width: 380px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    cursor: pointer;
+    background-color: #163A24;
+    color: #f0ecd7;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    transition: 0.4s;
+    letter-spacing: 2px;
+}
+
+button:hover{
+    background-color: #f0ecd7;
+    color: #163A24;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+button:focus{
+    outline: none;
+}
+
+
+/* ======== ANIMATIONS ========*/
+
+/* ======== MOVE SIGN-IN TO THE RIGHT ========*/
+.container.right-panel-active .sign-in-container{
+    transform: translateX(100%);
+}
+
+/* ======== MOVE OVERLAY TO THE LEFT ========*/
+.container.right-panel-active .overlay-container{
+    transform: translateX(-100%);
+}
+
+/* ======== FIX LAYERS ========*/
+.container.right-panel-active .sign-up-container{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+.container.right-panel-active .sign-in-container{
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/* ======== MOVE OVERLAY TO THE RIGHT ========*/
+.container.right-panel-active .overlay{
+    transform: translateX(50%);
+}
+
+.container.right-panel-active .overlay-left{
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right{
+    transform: translateX(20%);
+}
