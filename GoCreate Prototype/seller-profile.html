@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Create Seller | Profile</title>
+
+    <!-- ===== ICON ===== -->
+    <link rel="icon" type="image/png" href="img\logo.svg">
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- ===== GOOGLE FONTS ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Goblin+One&family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&family=Ranchers&family=Slackey&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="css\nav-styles.css">
+    <link rel="stylesheet" href="css\seller-profile-styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="seller-profile.html"><img src="img\seller-logo.svg" class="header-logo"></a>
+            </div>
+
+            <div class="nav-span">
+            <div class="nav-toggle-btn" id="nav-toggle-btn">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-close-btn" id="nav-close-btn">
+                    <i class='bx bx-x'></i>
+                </div>
+            
+                <ul class="nav-list">
+                    <li class="nav-item"> <a href="seller-profile.html" class="nav-link nav-text">Profile</a></li>
+                    <li class="nav-item"> <a href="#" class="nav-link nav-text">Orders</a></li>
+                    <li class="nav-item"> <a href="#" class="nav-link nav-text">Messages</a></li>
+                    <li class="nav-item"> <a href="seller-services.html" class="nav-link nav-text">Services</a></li>
+                    <li class="nav-item"> <a href="seller-portfolio.html" class="nav-link nav-text">Portfolio</a></li>
+                    <li class="nav-item"> <a href="#" class="nav-link mobile-view nav-text">Settings</a></li>
+                    <li class="nav-item"> <a href="index.html" class="nav-link mobile-view nav-text">Log Out</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-menu-two">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="seller-profile.html" class="nav-link profile-icons"><img src="img\nav-icon-user-icon.svg" alt="cart"></a>
+
+                        <ul class="dropdown">
+                            <li class="dropdown-options"><a href="#">Settings</a></li>
+                            <li class="dropdown-options"><a href="index.html">Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="profile-section">
+        <div class="profile container">
+            <div class="profile-card">
+                <div class="profile-icon-container">
+                    <div class="profile-icon">
+                        <img src="img\nav-icon-user-icon.svg" alt="profile">
+                    </div>
+                </div>
+
+                <div class="profile-details">
+                    <div class="name-container">
+                        <div class="name-with-button">
+                            <h3 class="full-name">Sean David Abalora</h3>
+                            <h4 class="username">@abasushi</h4>
+                        </div>
+                        <a href="seller-edit-profile.html" class="edit-profile-btn">EDIT PROFILE</a>
+                    </div>
+                    <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam ipsa reprehenderit, rem vitae porro adipisci perspiciatis qui perferendis asperiores ea sapiente quasi mollitia delectus magnam laborum placeat aspernatur quaerat magni a est quos sint eum? Ea voluptatem repudiandae similique, ratione vel cum illo voluptate beatae officiis alias non, quam possimus.</p>
+                    
+                    <div class="location">
+                        <div class="location-icon">
+    
+                        </div>
+    
+                        <div class="location-text">
+                            <p class="location-name">Philippines</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="navigation-section">
+        <div class="navigation-container">
+            <a href="seller-profile-portfolio.html" class="portfolio-btn">PORTFOLIO</a>
+            <a href="seller-profile-services.html" class="services-btn">SERVICES</a>
+        </div>
+    </section>
+
+    <!-- ===== JS ===== -->
+    <script src="js\nav-script.js"></script>
+</body>
+</html>
