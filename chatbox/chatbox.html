@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller_Homepage</title>
+    <link rel="stylesheet" href="chatbox.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+</head>
+<body>
+    <div class="container">
+		<div class="tabs">
+			<ul>
+				<li data-li="all" class="active">All</li>
+				<li data-li="unread">Unread</li>
+			</ul>
+		</div>
+
+		<div class="inbox">
+			<ul>
+				<li><div class="all">
+					<div class="image">
+						<img src="images/me(2).jpg">
+					</div>
+		<div class="detail">
+			<div class="message">
+				<div class="name">Lorem Ipsum</div>
+					<div class="tab-chat">Lorem ipsum dolor sit amet, consecte tur adip isici ng el it. Excepturi, similique.</div>
+				</div>
+			</div>
+		</div>
+	</li>
+
+		<li>
+			<div class="all unread">
+				<div class="image">
+					<img src="images/me(2).jpg">
+				</div>
+					<div class="detail">
+						<div class="message">
+							<div class="name">Lorem Ipsum</div>
+								<div class="tab-chat">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, rem.</div>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li>
+					<div class="all">
+						<div class="image">
+							<img src="images/me(2).jpg">
+						</div>
+				<div class="detail">
+					<div class="message">
+						<div class="name">Lorem Ipsum</div>
+							<div class="tab-chat">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, similique.</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+				<li>
+			<div class="all unread">
+				<div class="image">
+					<img src="images/me(2).jpg">
+				</div>
+					<div class="detail">
+						<div class="message">
+							<div class="name">Lorem Ipsum</div>
+								<div class="tab-chat">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, rem.</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				
+			</ul>	
+		</div>
+	</div>
+
+	
+
+		<div class="top-bar">
+			<header>
+				<div class="client">
+					<img src="images/me(2).jpg">
+				<div class="client-info">
+					<h2>Lorem</h2>
+					<p>Online</p>
+				</div>
+			</div>
+		</header>
+		
+
+	<main>
+		<div class="chat-container">
+			<div id="chatbox">
+				<p id="botMsg" class="bot-text"><span></span></p>
+			</div>
+		
+<div class="chat-input-box">
+<div id="userInput">
+  <input id="textInput" class="input-box" type="text" placeholder="Type here...">
+	<p></p>
+</div>
+
+  <div class="send-icon">    
+   <i id="chat-icon" class="fas fa-paper-plane" onclick="sendButton()"></i>
+</div>  
+</div>
+</div>
+
+	</main>
+		<script src="inbox.js"></script>
+		<script src="message.js"></script>
+		<script src="response.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>
