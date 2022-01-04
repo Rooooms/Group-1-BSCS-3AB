@@ -12,7 +12,7 @@
         <input type="password" name="usersRptPwd" placeholder="Repeat Password"required><br>
         <input type="radio" name="usersCategory" id="buyerRadio" value="Buyer" required>Buyer </input>
         <input type="radio" name="usersCategory" id="sellerRadio" value="Seller" required>Seller</input> <br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Next">
     </form>
 
 <?php
