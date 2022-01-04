@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2021 at 03:57 AM
+-- Generation Time: Jan 04, 2022 at 01:49 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `artstop`
 --
+CREATE DATABASE IF NOT EXISTS `artstop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `artstop`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE `category` (
+  `categoryId` int(11) NOT NULL,
+  `categoryUser` varchar(255) NOT NULL,
+  `categoryPick` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -27,6 +42,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `comment`
 --
 
+DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL,
   `date` date NOT NULL,
@@ -37,30 +53,48 @@ CREATE TABLE `comment` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `image`
+--
+
+DROP TABLE IF EXISTS `image`;
+CREATE TABLE `image` (
+  `imageId` int(11) NOT NULL,
+  `imageUser` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reserve`
+--
+
+DROP TABLE IF EXISTS `reserve`;
+CREATE TABLE `reserve` (
+  `reserveId` int(11) NOT NULL,
+  `reserveVehicle` varchar(255) NOT NULL,
+  `reserveTimeIn` date NOT NULL,
+  `reserveTimeOut` date NOT NULL,
+  `reserveUser` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `usersId` int(11) NOT NULL,
+  `usersStatus` enum('0','1') NOT NULL,
   `usersName` varchar(255) NOT NULL,
   `usersEmail` varchar(255) NOT NULL,
   `usersUid` varchar(255) NOT NULL,
   `usersPwd` varchar(255) NOT NULL,
-  `usersCategory` varchar(55) NOT NULL
+  `usersCategory` varchar(255) NOT NULL,
+  `profilepic` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`usersId`, `usersName`, `usersEmail`, `usersUid`, `usersPwd`, `usersCategory`) VALUES
-(1, 'Romeo Rojo', 'romeorojo45@gmail.com', 'Romeo', '$2y$10$uzgIwxfbU9RtFmSdeJipg.aBUbfllYqZ1OIgwD.htmMtvYKmHRkLy', ''),
-(2, 'qwe', 'romeorojo@gmail.com', 'qwe', '$2y$10$I5YPLnxUwtBwbZxf1GJLw.9oWw96XVIAYf7LuSgeAKGlqoMP2WuMq', ''),
-(3, 'romeo sandrino', 'romeorojooo@gmail.com', 'romeoromeo', '$2y$10$ftV0nZ/WoKHUscfsP5pX8.yNaTSVMfohZCHDLTjgahebBq7RsCQuq', ''),
-(4, 'wqeqwewq', 'abc@gmail.com', '123123', '$2y$10$82HzyaDMrgMnqP6u5xYZbuub/X5SfAcl47I/mJ9qRoPo5DbkkwNZ.', 'buyer'),
-(5, 'Dylan Jabla', 'dylanjabla@gmail.com', 'dylan', '$2y$10$ld9ES8jgJfr0UTuDT5MDleDNA0KZMJnwDGSkh40gV1XM43YHwCybS', 'buyer'),
-(6, 'kenlordtanga', 'kentanga@gmail.com', 'kentanga', '$2y$10$Ky94yRnUjlzQ4j0SgO4qM.ELrJEhz3AqqCRldn7hiWrYaF0srg3HS', 'buyer'),
-(7, 'Patrick Yee', 'yatrick@gmail.com', 'Yatrick', '$2y$10$ZPDtNUMPbCCfhpTWvB9ci.FdmZ26tTVhD79tCqm05mvQLr9veTQtS', 'buyer');
 
 -- --------------------------------------------------------
 
@@ -68,6 +102,7 @@ INSERT INTO `users` (`usersId`, `usersName`, `usersEmail`, `usersUid`, `usersPwd
 -- Table structure for table `works`
 --
 
+DROP TABLE IF EXISTS `works`;
 CREATE TABLE `works` (
   `id` int(11) NOT NULL,
   `img` varchar(256) NOT NULL,
@@ -79,10 +114,28 @@ CREATE TABLE `works` (
 --
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`categoryId`);
+
+--
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `image`
+--
+ALTER TABLE `image`
+  ADD PRIMARY KEY (`imageId`);
+
+--
+-- Indexes for table `reserve`
+--
+ALTER TABLE `reserve`
+  ADD PRIMARY KEY (`reserveId`);
 
 --
 -- Indexes for table `users`
@@ -101,16 +154,34 @@ ALTER TABLE `works`
 --
 
 --
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `categoryId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `image`
+--
+ALTER TABLE `image`
+  MODIFY `imageId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `reserve`
+--
+ALTER TABLE `reserve`
+  MODIFY `reserveId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `works`
