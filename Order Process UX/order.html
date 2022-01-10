@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Go Create! | Let's make some order</title>
+ <!-- ===== ICON ===== -->
+ <link rel="icon" type="image/png" href="/img/logo.svg">
+
+ <!-- ===== BOX ICONS ===== -->
+ <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+ <!-- ===== GOOGLE FONTS ===== -->
+ <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Goblin+One&family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&family=Ranchers&family=Slackey&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+ <!-- ===== CSS ===== -->
+ <link rel="stylesheet" href="/css/ordStyle.css">
+</head>
+<body>
+    <!-- NAV HEADER -->
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="img\logo.svg" class="header-logo"></a>
+                <h3>GoCreate</h3>
+            </div>
+            <div class="nav-toggle-btn" id="nav-toggle-btn">
+                <i class='bx bx-menu'></i>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-close-btn" id="nav-close-btn">
+                    <i class='bx bx-x'></i>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item"> <a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"> <a href="#" class="nav-link">Categories</a></li>
+                    <li class="nav-item"> <a href="#" class="nav-link">Messages</a></li>
+                    <li class="nav-item"> <a href="#" class="nav-link">Orders</a></li>
+                    <li class="nav-item"> <a href="#" class="nav-link">Profile</a></li>
+                    <li class="nav-item"> <a href="#" class="nav-link">Settings</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- TOP ICONS -->
+   <div class="topicons">
+       <ul>
+               <li class="left"><a href="#"><i class='bx bxs-left-arrow-alt bx-lg'></i></a></li>
+               <li class="right"><a href="#"><i class='bx bxs-message-square-dots bx-flip-horizontal bx-md'></i></i></i></a></li>
+           </ul>
+       </div>
+   </div>
+   <!-- TITLES -->
+   <h1>Hire your favorites!</h1>
+   <!-- <div id="numbering"> -->
+       <!-- <ul> -->
+           <!-- <li class="num">1</li> -->
+           <!-- <li class="text">Order form</li> -->
+           <!-- <li><i class='bx bx-chevron-right'></i></li> -->
+           <!-- <li class="num-2">2</li> -->
+           <!-- <li class="text-2">Review order</li> -->
+       </ul>
+<!-- </div> -->
+   <!-- MAIN CALLER -->
+<div id="mainRow">
+   <!-- page 1 : ORDER FORM -->
+   <div id="mainpg1">
+       <p class="srv">Services Availed:</p>
+       <div class="cont"><br><br><br><br><br></div>
+       <p class="srv">What will you avail?</p>
+       <div class="row">
+           <div class="col">
+               <p>Lorem Ipsum</p><br>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><br>
+               <p>Duis mollis mollis lorem, vel scelerisque quam feugiat ut.</p><br>
+               <p class="days">3-5 days</p><br>
+               <p class="prc">$10.00</p>
+           </div>
+           <div class="col">
+               <p>Lorem Ipsum</p><br>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><br>
+               <p>Duis mollis mollis lorem, vel scelerisque quam feugiat ut.</p><br>
+               <p class="days">5-10 days</p><br>
+               <p class="prc">$20.00</p>
+        </div>
+        <div class="col">
+               <p>Lorem Ipsum</p><br>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><br>
+               <p>Duis mollis mollis lorem, vel scelerisque quam feugiat ut.</p><br>
+               <p class="days">10-20 days</p><br>
+               <p class="prc">$35.00</p>
+        </div>
+        <div class="col">
+               <p>Lorem Ipsum</p><br>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><br>
+               <p>Duis mollis mollis lorem, vel scelerisque quam feugiat ut.</p><br>
+               <p class="days">20-30 days</p><br>
+               <p class="prc">$50.00</p>
+        </div>
+       </div>
+       <p class="srv">Additional Instructions:</p>
+       <div class="add">
+        <textarea class="content" placeholder="Write your additional instructions for the artist..."></textarea>
+       </div>
+       <button class="hvr-sweep-to-right" onclick="myFunction()">Proceed<i class='bx bxs-right-arrow-alt bx-md'></i>
+       </button>
+   </div>
+   <!-- Page 2: Review Order -->
+   <div id="mainpg2">
+    <div class="coll1">
+        <p>Order Details</p>
+        <p>Service availed:</p>
+        <div class="cont1"><br><br></div>
+        <p>Additional Instructions:</p>
+        <div class="mas">
+            Your instructions
+        </div>
+        <hr>
+        <p class="bill">Billing Address</p>
+        <div class="info">
+            <input type="text" class="name" placeholder="Enter your full name:">
+            <br>
+            <input type="text" class="email" placeholder="Enter your email:">
+        </div>
+        <h2>PAYMENT METHOD</h2>
+        <div class="payment"><i class='bx bxl-paypal bx-sm'></i>Paypal</div>
+        <div class="payment">&nbsp;</div>
+        <div class="payment">&nbsp;</div>
+        <div class="payment">&nbsp;</div>
+    </div>
+    <div class="coll2">
+        <h2>Summary</h2>
+        <hr class="one">
+        <p class="desc">lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis mollis lorem, vel scelerisque quam feugiat ut. </p>
+        <hr>
+        <div class="fee">
+            <div class="fees">
+        <p>Service:</p>
+        <p>Fees:</p>
+        <hr class="total">
+        <p><b><i>Total:</i></b></p>
+    </div>
+    <div class="price">
+        <p>$0.00</p>
+        <p>$0.00</p>
+        <hr class="total">
+        <p>$0.00</p>
+    </div>
+    </div>
+        <br>
+        <p class="title">PAYMENT</p>
+        <div class="payment"><i class='bx bxl-paypal bx-sm'></i>Paypal</div>
+        <br>
+        <p class="title">BILLING NO.</p>
+        <p class="deets">lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="deets">Duis mollis mollis lorem, vel scelerisque quam feugiat ut.</p>
+        <button class="confirm"><a href="order-status.html">Confirm Order&nbsp;&nbsp;&nbsp;<i class='bx bx-check'></i></a></button>
+        <br>
+        <button class="cancel">Cancel&nbsp;&nbsp;&nbsp;<i class='bx bx-x'></i></button>
+    </div>
+   </div>
+</div>
+    <!--===== GSAP =====-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    
+    <!-- ===== JS ===== -->
+    <script src="js/main.js"></script>
+
+    <!-- TOGGLE SHOW/HIDE -->
+    <script>
+        function myFunction() {
+          var x = document.getElementById("mainpg1");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script>
+</body>
+</html>
