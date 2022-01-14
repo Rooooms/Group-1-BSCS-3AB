@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2022 at 01:49 PM
+-- Generation Time: Jan 14, 2022 at 09:05 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `artstop`
 --
-CREATE DATABASE IF NOT EXISTS `artstop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `artstop`;
 
 -- --------------------------------------------------------
 
@@ -29,12 +27,26 @@ USE `artstop`;
 -- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
   `categoryId` int(11) NOT NULL,
   `categoryUser` varchar(255) NOT NULL,
   `categoryPick` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`categoryId`, `categoryUser`, `categoryPick`) VALUES
+(1, '6', 'Digital Arts'),
+(2, '6', 'Publication Material'),
+(3, '6', 'Traditional Arts'),
+(4, '1', 'Digital Arts'),
+(5, '1', 'Graphics Arts'),
+(6, '1', 'Photography'),
+(7, '2', 'Digital Arts'),
+(8, '2', 'Graphics Arts'),
+(9, '2', 'Photography');
 
 -- --------------------------------------------------------
 
@@ -42,7 +54,6 @@ CREATE TABLE `category` (
 -- Table structure for table `comment`
 --
 
-DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL,
   `date` date NOT NULL,
@@ -56,7 +67,6 @@ CREATE TABLE `comment` (
 -- Table structure for table `image`
 --
 
-DROP TABLE IF EXISTS `image`;
 CREATE TABLE `image` (
   `imageId` int(11) NOT NULL,
   `imageUser` varchar(255) NOT NULL,
@@ -66,10 +76,42 @@ CREATE TABLE `image` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `messageId` varchar(255) DEFAULT NULL,
+  `senderId` int(11) DEFAULT NULL,
+  `receiverId` int(11) DEFAULT NULL,
+  `dateCreated` int(11) DEFAULT NULL,
+  `messageContent` text DEFAULT NULL,
+  `messageStatus` enum('Sent','Read','Delete','Edit') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `messageId`, `senderId`, `receiverId`, `dateCreated`, `messageContent`, `messageStatus`) VALUES
+(1, '1', 1, 2, NULL, 'message1', 'Sent'),
+(2, '1', 1, 2, NULL, 'messagesample2', 'Sent'),
+(3, '1', 1, 2, 1642139154, 'asd', 'Sent'),
+(4, '1', 1, 2, 1642139475, 'asdasd', 'Sent'),
+(5, '1', 1, 2, 1642139495, 'asdasd23', 'Sent'),
+(7, '1', 1, 2, 1642139769, 'asdasd234', 'Sent'),
+(8, '1', 1, 2, 1642139890, 'asdasd2345\r\n', 'Sent'),
+(9, '1', 1, 2, 1642140010, 'asdasd23456\r\n', 'Sent'),
+(10, '1', 1, 2, 1642145986, 'asdasd23456\r\n', 'Sent'),
+(11, '1', 1, 2, 1642146112, 'asdasdasd123', 'Sent'),
+(12, '1', 1, 2, 1642146144, 'asdasdasd12345', 'Sent');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reserve`
 --
 
-DROP TABLE IF EXISTS `reserve`;
 CREATE TABLE `reserve` (
   `reserveId` int(11) NOT NULL,
   `reserveVehicle` varchar(255) NOT NULL,
@@ -84,7 +126,6 @@ CREATE TABLE `reserve` (
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `usersId` int(11) NOT NULL,
   `usersStatus` enum('0','1') NOT NULL,
@@ -96,13 +137,20 @@ CREATE TABLE `users` (
   `profilepic` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`usersId`, `usersStatus`, `usersName`, `usersEmail`, `usersUid`, `usersPwd`, `usersCategory`, `profilepic`) VALUES
+(1, '0', 'Dylan Jabla', 'dylan@mail.com', 'dylan', '202cb962ac59075b964b07152d234b70', 'Buyer', 'http://localhost/php/public/uploads/image/0839dbac6e442.jpg'),
+(2, '0', 'Dylan Jabla2', 'dylan2@mail.com', 'dylan2', '81dc9bdb52d04dc20036dbd8313ed055', 'Seller', 'http://localhost/php/public/uploads/image/e990561a09e61.jpg');
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `works`
 --
 
-DROP TABLE IF EXISTS `works`;
 CREATE TABLE `works` (
   `id` int(11) NOT NULL,
   `img` varchar(256) NOT NULL,
@@ -132,6 +180,12 @@ ALTER TABLE `image`
   ADD PRIMARY KEY (`imageId`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `reserve`
 --
 ALTER TABLE `reserve`
@@ -157,7 +211,7 @@ ALTER TABLE `works`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `categoryId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `categoryId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `comment`
@@ -172,6 +226,12 @@ ALTER TABLE `image`
   MODIFY `imageId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `reserve`
 --
 ALTER TABLE `reserve`
@@ -181,7 +241,7 @@ ALTER TABLE `reserve`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `works`

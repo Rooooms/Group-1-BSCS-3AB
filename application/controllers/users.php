@@ -185,6 +185,15 @@ class Users extends CI_Controller {
 		
 		$this->load->view('users/profilepicture');
 	}
+
+    public function messaging(){
+        if(isset($_SESSION['usersId'])){
+        $userid_msg = $_SESSION['usersId'];
+        redirect(messaging());
+        } else {
+            $this->load->view('users/landing');
+        }
+    }
 	
 	
 	

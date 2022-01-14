@@ -84,11 +84,23 @@ class UsersModel extends CI_Model {
 			return false;
 		}
 	}
+
+	public function compareId(){
+		//all users in database except session user 
+		//this db where this table
+		//
+	}
+
 	public function getUser($id=null){
 		if(isset($id) && $id != null){
 			$this->db->where('usersId', $id);
 		}
 
+		$query = $this->db->get($this->table);
+		return $query->result_array();
+	}
+
+	public function getUserForMsg(){
 		$query = $this->db->get($this->table);
 		return $query->result_array();
 	}
