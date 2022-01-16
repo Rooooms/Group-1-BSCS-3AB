@@ -12,11 +12,16 @@ class Users extends CI_Controller {
 		$data = $this->input->post();
 		if(isset($data) && $data != null){
 			$this->load->model('usersModel');
+<<<<<<< HEAD
 			$result=$this->usersModel->createUser($data);
             $_SESSION['user'] = $result;
 			if(is_int($result)){
 			redirect('categorypick/categorypick/'. $result);
 			}
+=======
+			$this->usersModel->createUser($data);
+			redirect(base_url());
+>>>>>>> acfb4e978c66ee03a948fe2b10ae5f989d18699d
 		}
 		$this->load->view('users/signup');
 	}
@@ -52,6 +57,7 @@ class Users extends CI_Controller {
         redirect(base_url());
     }
 
+<<<<<<< HEAD
 	public function profile($id = NULL){
 		
 		if(isset($_SESSION['usersId'])){
@@ -190,5 +196,34 @@ class Users extends CI_Controller {
 	
 }
 
+=======
+	//CATEGORIES
+	public function tradarts(){
+		$this->load->view('categories/tradarts');
+	}
+	public function digitalarts(){
+		$this->load->view('categories/digitalarts');
+	}
+	public function photography(){
+		$this->load->view('categories/photography');
+	}
+	public function typography(){
+		$this->load->view('categories/typography');
+	}
+	public function graphicdes(){
+		$this->load->view('categories/graphicdes');
+	}
+	public function pubmats(){
+		$this->load->view('categories/pubmats');
+	}
+	public function webdes(){
+		$this->load->view('categories/webdes');
+	}
+	public function animation(){
+		$this->load->view('categories/animation');
+	}
+	
+}
+>>>>>>> acfb4e978c66ee03a948fe2b10ae5f989d18699d
     
    

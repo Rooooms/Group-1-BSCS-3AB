@@ -1,0 +1,253 @@
+/* BASE */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f1f1f1;
+}
+
+/* NAV-BAR */
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.nav-container{
+    background-color: white;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 5rem;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo h3{
+    margin-left: 1rem;
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: lighter;
+    font-size: 1.8rem;
+    color: #197730;
+}
+
+.nav-list{
+    display: flex;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+  
+ul li a{
+    text-decoration: none;
+    color: #197730;
+    font-weight: 600;
+}
+  
+.show{
+    right: 0;
+}
+
+.nav-toggle-btn{
+    font-size: 2rem;
+    color: #197730;
+    cursor: pointer;
+}
+
+.nav-close-btn{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #F0ECD7;
+}
+
+.header-logo{
+    width: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+/* main */
+.row{
+    display: flex;
+    position: relative;
+    margin-top: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.col1{
+    padding: 10px;
+    background-color: #197730;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 100%;
+    text-align: center;
+    
+}
+.circle{
+    background-color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+.col1 h2{
+    font-family: 'Fredoka One', sans-serif;
+    letter-spacing: 3px;
+    color: #F0ECD7;
+    font-weight: lighter;
+    padding-top: 20px;
+    
+}
+.col1 .upper{
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+.col1 p{
+    padding: 10px;
+    font-size: 13px;
+}
+hr{
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.col2{
+    background-color: white;
+    padding: 10px;
+    width: 60%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.col2 .pending{
+    background: linear-gradient(#F0703E 5%, #E48928 10%, #F9BD38 50%);
+    width: 30%;
+    text-align: center;
+    padding: 2px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.avail{
+    display: flex;
+}
+.time{
+    display: flex;
+}
+.title{
+    font-size: 14px;
+    padding-right: 60px;
+    padding-left: 30px;
+}
+.title-time{
+    font-size: 14px;
+    padding-right: 45px;
+    padding-left: 30px;
+}
+.dets{
+    font-size: 13px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+.dets-time{
+    font-size: 13px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+.payment{
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+}
+.payment p{
+    background-color: white;
+    box-shadow: 3px 3px gray;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+.additional{
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.message{
+    text-align: center;
+    background: #197730;
+    width: 50%;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0 auto;
+    color: white;
+}
+.message:hover{
+    background:  #197730;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px gray;
+    transition: 0.1s;
+}
+/* NAV-BAR MEDIA QUERY FOR SMALLER SCREENS */
+@media screen and (min-width: 768px){
+    .nav-toggle-btn, .nav-close-btn{
+        display: none;
+    }
+
+    .nav-item{
+        margin-left: 3rem;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .nav-menu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #197730;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: 'Fredoka One', sans-serif;
+        text-transform: lowercase;
+        font-size: 4rem;
+    }
+
+    .nav-link{
+        color: #F0ECD7;
+        font-weight: lighter;
+        transition: 0.5s;
+    }
+
+    .nav-link:hover{
+        color: #163A24;
+    }
+}
