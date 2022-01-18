@@ -1,0 +1,141 @@
+body{
+    background-color: #f1f1f1;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    padding: 3rem 0;
+}
+
+.new-portfolio-section{
+    padding: 0 15rem;
+}
+
+.new-portfolio-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 100%;
+    min-height: 500px;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
+.portfolio-form-container{
+    width: 100%;
+    padding: 2rem 5rem;
+}
+
+.portfolio-form-container h2{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 200;
+}
+
+.portfolio-input-field{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.portfolio-input-field input{
+    margin-top: 0.2rem;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    line-height: 1;
+    font-size: 1rem;
+    padding: 0 20px 0 0;
+}
+
+.portfolio-input-field select{
+    margin-top: 0.2rem;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    line-height: 1;
+    font-size: 1rem;
+    padding: 0 20px 0 0;
+}
+
+.portfolio-buttons-section{
+    padding: 0 15rem;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.portfolio-buttons-container a{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #1B8436;
+    color: #F0ECD7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.5rem 0.8rem;
+    transition: 0.4s;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.portfolio-buttons-container a:hover{
+    background-color: #197730;
+}
+
+@media only screen and (max-width: 768px){
+    .new-portfolio-section{
+        padding: 0 2rem;
+    }
+
+    .portfolio-form-container h2{
+        font-size: 2.5rem;
+    }
+
+    .portfolio-input-field{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .portfolio-input-field input{
+        padding: 0;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .portfolio-input-field select{
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .portfolio-buttons-section{
+        padding: 0 2rem;
+        justify-content: center;
+        align-items: center;        
+    }
+
+    .portfolio-buttons-container{
+        width: 100%;
+    }
+
+    .portfolio-buttons-section a{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+}
