@@ -1,0 +1,133 @@
+body{
+    background-color: #f1f1f1;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    padding: 0 20rem;
+}
+
+.settings-container{
+    width: 100%;
+    justify-content: center;
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: 20% 80%;
+}
+
+.settings-options{
+    text-align: end;
+}
+
+.settings-options ul{
+    list-style: none;
+}
+
+.settings-options a{
+    color: #1B8436;
+    font-weight: 600;
+}
+
+.edit-profile-container{
+    background-color: #FFFFFF;
+    padding: 2rem 4rem;
+    border-radius: 5px;
+}
+
+.form-container h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.input-field{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.input-field input{
+    margin-top: 0.2rem;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    line-height: 1;
+    font-size: 1rem;
+    padding: 0.1rem;
+}
+
+.input-field select{
+    margin-top: 0.2rem;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    line-height: 1;
+    font-size: 1rem;
+    padding: 0.1rem;
+}
+
+textarea{
+    resize: vertical;
+    margin-top: 0.2rem;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    line-height: 1;
+    font-size: 1rem;
+    padding: 0.1rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.buttons-container a{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #1B8436;
+    color: #F0ECD7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.5rem 0.8rem;
+    transition: 0.4s;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 1024px){
+    section{
+        padding: 0 3rem;
+    }
+
+    .settings-container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .edit-profile-buttons{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .edit-profile-buttons-container a{
+        width: 100%;
+        text-align: center;
+    }
+
+    .input-field{
+        display: flex;
+        flex-direction: column;
+
+    }
+}
