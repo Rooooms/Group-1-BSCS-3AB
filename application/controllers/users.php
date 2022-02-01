@@ -215,6 +215,7 @@ class Users extends CI_Controller {
 		$this->load->view('users/profilepicture');
 	}
 
+<<<<<<< HEAD
     public function userSort($id = NULL){
         if($id === NULL){
             $id = $_SESSION['usersId'];
@@ -276,6 +277,15 @@ class Users extends CI_Controller {
             redirect('');
         }
         $this->load->view('users/emailverify');
+=======
+    public function messaging(){
+        if(isset($_SESSION['usersId'])){
+        $userid_msg = $_SESSION['usersId'];
+        redirect(messaging());
+        } else {
+            $this->load->view('users/landing');
+        }
+>>>>>>> e527bb3410f9e16eccad2826cd410e88b70fab92
     }
 	
     public function editprofile(){
