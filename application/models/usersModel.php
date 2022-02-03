@@ -24,17 +24,18 @@ class UsersModel extends CI_Model {
 			return;
 		}
 		else{
-			$data['usersPwd'] = md5($data['usersPwd']);
+			$data['usersPwd'] = sha1($data['usersPwd']);
 			unset($data['usersRptPwd']);
 			$this->db->insert($this->table, $data);
-			return $this->db->insert_id();
+			return $this->db->insert_id();	
 		}
 	}
+	
 	public function loginUser($uid, $pwd){
 		$this->db->where('usersUid', $uid)
-			->where('usersPwd', md5($pwd))
+			->where('usersPwd', sha1($pwd))
 			->or_where('usersEmail', $uid)
-			->where('usersPwd', md5($pwd));
+			->where('usersPwd', sha1($pwd));
 
 		$query = $this->db->get($this->table);
 
@@ -84,24 +85,32 @@ class UsersModel extends CI_Model {
 			return false;
 		}
 	}
+
+	public function compareId(){
+		//all users in database except session user 
+		//this db where this table
+		//
+	}
+
 	public function getUser($id=null){
 		if(isset($id) && $id != null){
 			$this->db->where('usersId', $id);
 		}
 
 		$query = $this->db->get($this->table);
+		
+<<<<<<< HEAD
+=======
+		return $query->result_array();
+	}
+
+	public function getUserForMsg(){
+		$query = $this->db->get($this->table);
+>>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
 		return $query->result_array();
 	}
 
 	public function addCategory($id, $category){
-		
-		/*$data= array(
-			'categorypick'=>$this->input->post('categorypick[]')
-		);	
-		print_r($data);
-		$this->db->set($data);
-		$this->db->update($this->db->dbprefix . 'users');*/	
-		
 		$this->db->where('usersId', $id);
 		$this->db->update($this->table, $category);
 	}
@@ -111,6 +120,7 @@ class UsersModel extends CI_Model {
 		unset($data['usersId']);
 		echo $data['profilepic'];
 		$this->db->update($this->table, $data);
+		return $this->db->insert_id();
 	}
 	
 }

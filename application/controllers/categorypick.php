@@ -16,8 +16,10 @@ public function categorypick($id=null) {
 			foreach ($data as $category){
 				$this->category_model->addCategory($id, $category);
 			}
+			
 			redirect('users/profilepic');
 		}
+			
 
 			$this->load->view('users/categorypick');
 
