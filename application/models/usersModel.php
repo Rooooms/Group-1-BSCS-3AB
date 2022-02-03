@@ -33,9 +33,9 @@ class UsersModel extends CI_Model {
 	
 	public function loginUser($uid, $pwd){
 		$this->db->where('usersUid', $uid)
-			->where('usersPwd', md5($pwd))
+			->where('usersPwd', sha1($pwd))
 			->or_where('usersEmail', $uid)
-			->where('usersPwd', md5($pwd));
+			->where('usersPwd', sha1($pwd));
 
 		$query = $this->db->get($this->table);
 
@@ -104,6 +104,7 @@ class UsersModel extends CI_Model {
 
 	public function getUserForMsg(){
 		$query = $this->db->get($this->table);
+
 		return $query->result_array();
 	}
 

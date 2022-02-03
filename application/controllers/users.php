@@ -34,6 +34,8 @@ class Users extends CI_Controller {
 		$data = array();
 		$data = $this->input->post();
 		if(isset($data) && $data != null){
+            
+
 			$this->load->model('usersModel');
 			$return = $this->usersModel->loginUser($data['usersUid'], $data['usersPwd']);
 
@@ -76,8 +78,6 @@ class Users extends CI_Controller {
 		$this->load->view('homepage/sellerhomepage');
 	}
 	public function logout(){
-        session_destroy();
-        redirect('users/login');
     }
 
 	public function profile($id = NULL){
@@ -215,7 +215,6 @@ class Users extends CI_Controller {
 		$this->load->view('users/profilepicture');
 	}
 
-<<<<<<< HEAD
     public function userSort($id = NULL){
         if($id === NULL){
             $id = $_SESSION['usersId'];
@@ -223,8 +222,9 @@ class Users extends CI_Controller {
         $this->load->model('usersModel');
         $user = $this->usersModel->getUser($id);
         $output['user'] = $user[0];
+
         //print_r($output);
-        
+
         
         if($output['user']['usersCategory']==='Buyer'){
         redirect('users/buyerhomepage');
@@ -277,7 +277,21 @@ class Users extends CI_Controller {
             redirect('');
         }
         $this->load->view('users/emailverify');
-=======
+    }
+	
+    public function editprofile($id=null){
+        if(isset($_SESSION['usersId'])){
+			if($id === NULL){
+				$id = $_SESSION['usersId'];
+			}
+			$this->load->model('usersModel');
+			$user = $this->usersModel->getUser($id);
+			$output['user'] = $user[0];
+			$this->load->view('users/editprofile', $output);
+		}
+	}
+
+
     public function messaging(){
         if(isset($_SESSION['usersId'])){
         $userid_msg = $_SESSION['usersId'];
@@ -285,14 +299,27 @@ class Users extends CI_Controller {
         } else {
             $this->load->view('users/landing');
         }
->>>>>>> e527bb3410f9e16eccad2826cd410e88b70fab92
+
     }
 	
+
+    public function messaging(){
+        if(isset($_SESSION['usersId'])){
+        $userid_msg = $_SESSION['usersId'];
+        redirect(messaging());
+        } else {
+            $this->load->view('users/landing');
+        }
+
+    }
+	
+
     public function editprofile(){
         $this->load->view('users/editprofile');
     }
 	
 	
+
 }
 
     

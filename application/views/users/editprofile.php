@@ -73,7 +73,13 @@
                                 <div class="container">
                                     <div class="wrapper">
                                         <div class="image">
+
+                                            <img src="<?php echo $user['profilepic']?>" id="photo">
+
                                             <img src="" id="photo">
+
+                                            <img src="" id="photo">
+
                                         </div>
 
                                         <!-- <div class="content">

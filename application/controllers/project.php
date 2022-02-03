@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Project extends CI_Controller {
+    public function uniqidReal($lenght = 13) {
+=======
+    function uniqidReal($lenght = 13) {
     function uniqidReal($lenght = 13) {
         // uniqid gives 13 chars, but you could adjust it to your needs.
         if (function_exists("random_bytes")) {
@@ -14,13 +16,25 @@ class Project extends CI_Controller {
         return substr(bin2hex($bytes), 0, $lenght);
     }
 
+    public function addProject($id=null){
+        if(isset($_SESSION['usersId'])){
+            if($id===null){
+                $id=$_SESSION['usersId'];
+            }
+
+        $this->load->model('usersModel');
+        $result=$this->usersModel->getUser($id);
+
+        $output['id']=$result[0]['usersId'];
+
+    public function addProject(){
+
     public function addProject(){
         $data = array();
-		$data = $this->input->post();
-        
+		$data = $this->input->post();   
 		if(isset($data) && $data != null){
             if(isset($_FILES) && $_FILES!= null){
-               
+            
                 $file = $_FILES['serviceImage'];
                 $fileName = $_FILES['serviceImage']['name'];
                 $fileTmpName = $_FILES['serviceImage']['tmp_name'];
@@ -28,7 +42,7 @@ class Project extends CI_Controller {
                 $fileError = $_FILES['serviceImage']['error'];
                 $fileType = $_FILES['serviceImage']['type'];
                 
-    
+   
                 $fileExt = explode('.', $fileName);
                 $fileActualExt = strtolower(end($fileExt));
                 
@@ -61,10 +75,18 @@ class Project extends CI_Controller {
         }
 
         $this->load->model('projectModel');
+        $this->projectModel->addProject($data, $_SESSION['info'], $id);
+
         $this->projectModel->addProject($data, $_SESSION['info']);
+
+        $this->projectModel->addProject($data, $_SESSION['info']);
+
 
         
     }
     $this->load->view('users/seller/addProject');
 }
+
+    }
+
 }
