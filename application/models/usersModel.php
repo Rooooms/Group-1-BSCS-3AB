@@ -99,14 +99,12 @@ class UsersModel extends CI_Model {
 
 		$query = $this->db->get($this->table);
 		
-<<<<<<< HEAD
-=======
 		return $query->result_array();
 	}
 
 	public function getUserForMsg(){
 		$query = $this->db->get($this->table);
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
 		return $query->result_array();
 	}
 

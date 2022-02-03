@@ -1,12 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Project extends CI_Controller {
-<<<<<<< HEAD
     public function uniqidReal($lenght = 13) {
 =======
     function uniqidReal($lenght = 13) {
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+    function uniqidReal($lenght = 13) {
         // uniqid gives 13 chars, but you could adjust it to your needs.
         if (function_exists("random_bytes")) {
             $bytes = random_bytes(ceil($lenght / 2));
@@ -18,7 +16,6 @@ class Project extends CI_Controller {
         return substr(bin2hex($bytes), 0, $lenght);
     }
 
-<<<<<<< HEAD
     public function addProject($id=null){
         if(isset($_SESSION['usersId'])){
             if($id===null){
@@ -29,16 +26,15 @@ class Project extends CI_Controller {
         $result=$this->usersModel->getUser($id);
 
         $output['id']=$result[0]['usersId'];
-        
-=======
+
     public function addProject(){
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
+    public function addProject(){
         $data = array();
-		$data = $this->input->post();
-        
+		$data = $this->input->post();   
 		if(isset($data) && $data != null){
             if(isset($_FILES) && $_FILES!= null){
-               
+            
                 $file = $_FILES['serviceImage'];
                 $fileName = $_FILES['serviceImage']['name'];
                 $fileTmpName = $_FILES['serviceImage']['tmp_name'];
@@ -46,7 +42,7 @@ class Project extends CI_Controller {
                 $fileError = $_FILES['serviceImage']['error'];
                 $fileType = $_FILES['serviceImage']['type'];
                 
-    
+   
                 $fileExt = explode('.', $fileName);
                 $fileActualExt = strtolower(end($fileExt));
                 
@@ -79,19 +75,18 @@ class Project extends CI_Controller {
         }
 
         $this->load->model('projectModel');
-<<<<<<< HEAD
         $this->projectModel->addProject($data, $_SESSION['info'], $id);
-=======
+
         $this->projectModel->addProject($data, $_SESSION['info']);
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
+        $this->projectModel->addProject($data, $_SESSION['info']);
+
 
         
     }
     $this->load->view('users/seller/addProject');
 }
-<<<<<<< HEAD
+
     }
 
-=======
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
 }

@@ -3,7 +3,6 @@ class Messaging_model extends CI_model{
 	
 	private $table = "messages";
 
-<<<<<<< HEAD
 
 	public function addMessage($data, $sender) {
         $data['dateCreated'] = time();
@@ -36,7 +35,6 @@ class Messaging_model extends CI_model{
 		return $result->result_array();
 
 	}
-=======
 	public function getMessages($messageId = null, $userId = null, $userType = null) {
         if(isset($messageId) && $messageId != null) {
             $this->db->where('messageid', $messageId);
@@ -100,7 +98,6 @@ class Messaging_model extends CI_model{
                     echo ".$chat["Message"].";
 	}
 	*/
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
 
 }
 

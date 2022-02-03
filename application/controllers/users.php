@@ -78,14 +78,6 @@ class Users extends CI_Controller {
 		$this->load->view('homepage/sellerhomepage');
 	}
 	public function logout(){
-<<<<<<< HEAD
-        
-		session_destroy();
-		redirect(base_url());
-=======
-        session_destroy();
-        redirect('users/login');
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
     }
 
 	public function profile($id = NULL){
@@ -223,10 +215,6 @@ class Users extends CI_Controller {
 		$this->load->view('users/profilepicture');
 	}
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
     public function userSort($id = NULL){
         if($id === NULL){
             $id = $_SESSION['usersId'];
@@ -234,12 +222,9 @@ class Users extends CI_Controller {
         $this->load->model('usersModel');
         $user = $this->usersModel->getUser($id);
         $output['user'] = $user[0];
-<<<<<<< HEAD
-       
-=======
+
         //print_r($output);
-        
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
         
         if($output['user']['usersCategory']==='Buyer'){
         redirect('users/buyerhomepage');
@@ -292,7 +277,6 @@ class Users extends CI_Controller {
             redirect('');
         }
         $this->load->view('users/emailverify');
-<<<<<<< HEAD
     }
 	
     public function editprofile($id=null){
@@ -307,8 +291,7 @@ class Users extends CI_Controller {
 		}
 	}
 
-=======
-=======
+
     public function messaging(){
         if(isset($_SESSION['usersId'])){
         $userid_msg = $_SESSION['usersId'];
@@ -316,15 +299,27 @@ class Users extends CI_Controller {
         } else {
             $this->load->view('users/landing');
         }
->>>>>>> e527bb3410f9e16eccad2826cd410e88b70fab92
+
     }
 	
+
+    public function messaging(){
+        if(isset($_SESSION['usersId'])){
+        $userid_msg = $_SESSION['usersId'];
+        redirect(messaging());
+        } else {
+            $this->load->view('users/landing');
+        }
+
+    }
+	
+
     public function editprofile(){
         $this->load->view('users/editprofile');
     }
 	
 	
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
 }
 
     

@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
-=======
-<<<<<<< HEAD
+
+
 <!DOCTYPE html>
 <html lang="en">
-=======
+
 <?php
     $this->load->view('templates/header.php');
 ?>
@@ -14,9 +13,6 @@
     <button type="button"><a href="<?php echo base_url()."users/settings"?>">Settings</a></button>
     <button type="button"><a href="<?php echo base_url()."users/logout"?>">Log Out</a></button>
     <button type="button"><a href="<?php echo base_url()."messaging/index"?>">Messaging</a></button>
->>>>>>> e527bb3410f9e16eccad2826cd410e88b70fab92
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

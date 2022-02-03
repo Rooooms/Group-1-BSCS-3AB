@@ -9,20 +9,18 @@ class Projectmodel extends CI_Model {
 		parent::__construct();
 	}
 
-<<<<<<< HEAD
+
     public function addProject($data, $image, $id){
 
         //$data['userId']=$id;
         $data['serviceImage']= $image['serviceImage'];
         $data['userId']=$id;
-=======
+
     public function addProject($data, $image){
 
         //$data['userId']=$id;
         $data['serviceImage']= $image['serviceImage'];
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
         
-
         $this->db->insert($this->table, $data);
     }
 

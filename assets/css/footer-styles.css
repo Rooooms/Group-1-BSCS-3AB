@@ -1,12 +1,11 @@
-<<<<<<< HEAD
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-=======
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
 .custom-shape-divider-top-1643100995 {
     position: relative;
     top: 0;
@@ -96,7 +95,7 @@ a{
     color: #163A24;
 }
 
-<<<<<<< HEAD
+
 .footer-column h5{
     font-family: 'Outfit', sans-serif;
     font-size: 0.8rem;
@@ -106,8 +105,7 @@ a{
     color: #163A24;
 }
 
-=======
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
 .footer-column ul li{
     margin-bottom: 0.2rem;
 }
@@ -343,11 +341,13 @@ a{
     overflow: hidden;
     width: 800px;
     height: 400px;
-<<<<<<< HEAD
+
     /* background-color: #3aa755; */
-=======
+
     background: #3aa755;
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
+    background: #3aa755;
+
     border-radius: 10px;
     box-sizing: border-box;
     z-index: 2;
@@ -358,7 +358,7 @@ a{
     transition: opacity 300ms ease-in-out, top 1000ms ease-in-out, transform 1000ms ease-in-out;
 }
 
-<<<<<<< HEAD
+
 .creator-links{
     display: flex;
     justify-content: center;
@@ -537,8 +537,7 @@ a{
 }
 
 
-=======
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
 .creator-popup.active{
     opacity: 1;
     top: 50%;
@@ -578,29 +577,35 @@ a{
 
 .creator-details h2{
     font-size: 2rem;
-<<<<<<< HEAD
+
     color: #FFFFFF;
-=======
+
     color: #F0ECD7;
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
+    color: #F0ECD7;
+
 }
 
 .creator-details p{
     text-align: justify;
-<<<<<<< HEAD
+
     color: #FFFFFF;
-=======
+
     color: #F0ECD7;
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
+    color: #F0ECD7;
+
 }
 
 .creator-details a{
     text-transform: uppercase;
-<<<<<<< HEAD
+
     color: #FFFFFF;
-=======
+
     color: #F0ECD7;
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
+    color: #F0ECD7;
+
     transition: 0.3s;
     margin-bottom: 0.2rem;
 }
@@ -634,27 +639,30 @@ a{
 .creator-popup .dismiss-btn button{
     padding: 0.5rem 2rem;
     font-family: 'Outfit', sans-serif;
-<<<<<<< HEAD
-=======
+
+
     background-color: #E48928;
     color: #f5f5f5;
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
+    background-color: #E48928;
+    color: #f5f5f5;
+
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 600;
     outline: none;
     border-radius: 5px;
     cursor: pointer;
-<<<<<<< HEAD
+
     transition: all 200ms ease-in-out;
-=======
+
     transition: all 300ms ease-in-out;
 }
 
 .creator-popup .dismiss-btn button:hover{
     color: #111;
     background: #f5f5f5;
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
 }
 
 .creator-popup>div {
@@ -682,7 +690,7 @@ a{
 
 .creator-popup.active .dismiss-btn {
     transition: all 300ms ease-in-out 400ms;
-<<<<<<< HEAD
+
 }
 
 @media screen and (max-width: 1000px){
@@ -721,6 +729,5 @@ a{
         font-size: 1.7rem;
         color: #FFFFFF;
     }
-=======
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
 }

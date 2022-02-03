@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?=isset($message) ? $message : "";?>
 <button type="button"><a href="<?php echo base_url()."users/buyerhomepage"?>">Back</a></button>
 <div class = "message-container">
@@ -10,7 +9,6 @@
         <input type="submit" value="Send Message">
     </form>
 </div>
-=======
 <form method="POST" action="/messages/addMessage">
     <input type="hidden" name="messageId" value="<?=$message[0]['messageid']?>">
     Sender
@@ -44,5 +42,6 @@
 
     <input type="submit" value="Reply Message">
 
+
 </form>
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+

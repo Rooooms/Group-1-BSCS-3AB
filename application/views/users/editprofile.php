@@ -73,11 +73,13 @@
                                 <div class="container">
                                     <div class="wrapper">
                                         <div class="image">
-<<<<<<< HEAD
+
                                             <img src="<?php echo $user['profilepic']?>" id="photo">
-=======
+
                                             <img src="" id="photo">
->>>>>>> bd723499f3626a8949d983dfd97a14c6c73d6971
+
+                                            <img src="" id="photo">
+
                                         </div>
 
                                         <!-- <div class="content">
