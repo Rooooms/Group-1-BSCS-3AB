@@ -12,7 +12,6 @@ class Messaging extends CI_Controller {
         $this->load->model('messaging_model');
 		redirect("/messaging/addMessage");
     }
-
     public function addMessage() {
         $data = array();
         $post = $this->input->post();

@@ -56,7 +56,6 @@ echo "</pre>";
                         <li><a href="<?php echo base_url()."users/logout"?>">Log Out</a></li>
                     </ul>
                 </div>
-
                 <div class="overlay"></div>
 
                 <div class="hamburger-menu">
@@ -137,7 +136,6 @@ echo "</pre>";
             </div>
         </div>
     </div>
-
     <div class="creator-popup center dylan-popup">
         <div class="creator-grid">
             <div class="creator-img">
@@ -171,7 +169,6 @@ echo "</pre>";
             </div>
         </div>
     </div>
-
     <div class="creator-popup center errol-popup">
         <div class="creator-grid">
             <div class="creator-img">
@@ -202,7 +199,6 @@ echo "</pre>";
             </div>
         </div>
     </div>
-
     <div class="creator-popup center aba-popup">
         <div class="creator-grid">
             <div class="creator-img">
