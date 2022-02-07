@@ -1,7 +1,7 @@
 <?php  
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class UsersModel extends CI_Model {
+class Usersmodel extends CI_Model {
 
 	private $table = "users";
 
@@ -24,17 +24,18 @@ class UsersModel extends CI_Model {
 			return;
 		}
 		else{
-			$data['usersPwd'] = md5($data['usersPwd']);
+			$data['usersPwd'] = sha1($data['usersPwd']);
 			unset($data['usersRptPwd']);
 			$this->db->insert($this->table, $data);
-			return $this->db->insert_id();
+			return $this->db->insert_id();	
 		}
 	}
+	
 	public function loginUser($uid, $pwd){
 		$this->db->where('usersUid', $uid)
-			->where('usersPwd', md5($pwd))
+			->where('usersPwd', sha1($pwd))
 			->or_where('usersEmail', $uid)
-			->where('usersPwd', md5($pwd));
+			->where('usersPwd', sha1($pwd));
 
 		$query = $this->db->get($this->table);
 
@@ -84,24 +85,20 @@ class UsersModel extends CI_Model {
 			return false;
 		}
 	}
-	public function getUser($id=null){
+	public function getUser($id=null, $userCategory=null){
 		if(isset($id) && $id != null){
 			$this->db->where('usersId', $id);
 		}
+		if(isset($userCategory) && $userCategory != null){
+			$this->db->where('usersCategory', $userCategory);
+		}
 
 		$query = $this->db->get($this->table);
+		
 		return $query->result_array();
 	}
 
 	public function addCategory($id, $category){
-		
-		/*$data= array(
-			'categorypick'=>$this->input->post('categorypick[]')
-		);	
-		print_r($data);
-		$this->db->set($data);
-		$this->db->update($this->db->dbprefix . 'users');*/	
-		
 		$this->db->where('usersId', $id);
 		$this->db->update($this->table, $category);
 	}
@@ -111,6 +108,7 @@ class UsersModel extends CI_Model {
 		unset($data['usersId']);
 		echo $data['profilepic'];
 		$this->db->update($this->table, $data);
+		return $this->db->insert_id();
 	}
 	
 }

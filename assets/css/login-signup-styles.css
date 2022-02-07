@@ -1,0 +1,546 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Syne', sans-serif;
+    background: #163A24;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* margin: -20px 0 50px; */
+
+}
+
+.header-logo{
+    background: url(/img/logo.svg) ;
+}
+
+button{
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.login-signup-container{
+    background: #f0ecd7;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 100%;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+/* .sign-in-container{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.sign-up-container{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+} */
+
+/* ======== SIGN-IN & SIGN-UP FORM STYLES ========*/
+
+.title{
+    font-size: 1.4rem;
+    color: #163A24;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+input{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.input-field{
+    max-width: 320px;
+    width: 100%;
+    height: 40px;
+    background-color: #1B8436;
+    margin: 5px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+}
+
+.input-field i{
+    text-align: center;
+    line-height: 40px;
+    color: #f0ecd7;
+    font-size: 1rem;
+}
+
+.input-field input{
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #f0ecd7;
+    padding: 0 20px 0 0;
+    letter-spacing: 0.5px;
+}
+
+.input-field input::placeholder{
+    color: #f0ecd7;
+    opacity: 90%;
+    font-weight: 500;
+    letter-spacing: 0px;
+}
+
+.extra-buttons{
+    width: 100%;
+    text-align: right;
+}
+
+.extra-buttons a{
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #1B8436;
+    transition: 0.5s;
+}
+
+.extra-buttons a:hover{
+    color: #163A24;
+}
+
+.forgot-pw-icon img{
+    width: 100%;
+}
+
+.forgot-pw-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    padding: 0.5rem;
+    background-color: #163A24;
+    border-radius: 10px;
+    margin: 0.5rem 0;
+}
+
+.btn{
+    font-family: 'Syne', sans-serif;
+    width: 320px;
+    height: 40px;
+    border-radius: 55px;
+    cursor: pointer;
+    background-color: #163A24;
+    color: #f0ecd7;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 5px 0;
+    transition: 0.3s;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.btn:hover{
+    background-color: #E48928;
+}
+
+a:hover{
+    color: #163A24;
+}
+
+.btn:active{
+    transform: scale(0.95);
+}
+
+.btn:focus{
+    outline: none;
+}
+
+/* UPLOAD PIC STYLE */
+.container{
+  width: 100%;
+  position: relative;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.mobile-btn h3{
+    font-family: 'Fredoka One', sans-serif;
+    color: #163A24;
+    font-weight: lighter;
+    font-size: 1.4rem;
+}
+
+.container .wrapper{
+  position: relative;
+  height: 250px;
+  width: 250px;
+  border-radius: 100%;
+  background: #FFFFFF;
+  border: 2px solid #163A24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.wrapper.active{
+  border: none;
+}
+
+.wrapper .image{
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.wrapper .icon{
+  font-size: 50px;
+  text-align: center;
+  color: #1B8436;
+}
+
+.wrapper .text{
+  font-size: 20px;
+  font-weight: 500;
+  color: #5b7b63;
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.wrapper .text i{
+    font-size: 0.7rem;
+    font-family: 'Quicksand', sans-serif;
+}
+.wrapper #cancel-btn i{
+  position: absolute;
+  font-size: 20px;
+  right: 15px;
+  top: 15px;
+  color: #f0ecd7;
+  cursor: pointer;
+  display: none;
+  transition: 0.3s;
+}
+.wrapper.active:hover #cancel-btn i{
+  display: block;
+}
+.wrapper #cancel-btn i:hover{
+    color: #1B8436;
+}
+.wrapper .file-name{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 0;
+  color: #fff;
+  display: none;
+  background-color: #1B8436;
+  font-size: 0.8rem;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+.wrapper.active:hover .file-name{
+  display: block;
+}
+.container #custom-btn{
+  display: block;
+  width: 250px;
+  padding: 0.4rem 0;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: 'Syne', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+    background-color: #1B8436;
+    transition: 0.2s;
+}
+
+.container #custom-btn:hover{
+    background-color: #163A24;  
+}
+
+.proceed-btn a{
+  display: block;
+  width: 250px;
+  padding: 0.4rem 0;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: 'Syne', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #1B8436;
+  transition: 0.4s;
+  text-decoration: none;
+}
+
+.proceed-btn a:hover{
+    background-color: #163A24;  
+}
+
+@media screen and (min-width: 768px){
+    .mobile-btn{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .login-signup-container{
+        min-height: 650px;
+        width: 75%;
+    }
+
+    .input-field{
+        max-width: 225px;
+        width: 100%;
+        height: 40px;
+        background-color: #1B8436;
+        margin: 5px 0;
+        border-radius: 55px;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        padding: 0 0.4rem;
+    }
+
+    .btn{
+        width: 225px;
+    }
+}
+
+
+/* ======== RADIO BUTTON STYLES ========*/
+
+.chooseAccount{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #163A24;
+    margin: 5px 0;
+}
+
+.radio-input{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 320px;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.radio-input i{
+    color: #f0ecd7;
+    font-size: 1rem;
+    line-height: 55px;
+}
+
+input[type="radio"]{
+	-webkit-appearance:none;
+}
+
+label{
+	height: 40px;
+	width: 320px;
+	border-radius: 55px;
+    background-color: #1B8436;
+	transition: 0.3s;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sellerRadio{
+    margin-right: 10px;
+}
+
+label>span{
+	font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+	font-weight: 700;
+    margin-left: 10px;
+    color: #f0ecd7;
+}
+
+input[type="radio"]:checked + label{
+	background: linear-gradient(to left, #F9BD38 0%, #E48928 30%, #F0703E 100%);
+    transform: scale(0.95);
+    color: #163A24;
+}
+
+@media screen and (max-width: 768px){
+    .radio-input{
+        flex-direction: column;
+        max-width: 225px;
+        width: 100%;
+    }
+    label{
+        width: 225px;
+    }
+    .sellerRadio{
+        margin: 5px 0;
+    }
+}
+
+/* ======== OVERLAY STYLES ========*/
+@media screen and (min-width: 768px){
+    .overlay-design-container{
+        background: #f0ecd7;
+        border-radius: 10px;
+        width: 500px;
+        max-width: 100%;
+        min-height: 600px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+    }
+    
+    .overlay-container{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .overlay{
+        background-image: url("/img/login-signup-img/overlay-bg.svg");
+        background-repeat: none;
+        position: relative; 
+        height: 100%;
+        background-position: center;
+    }
+    
+    .overlay-panel{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .overlay-title{
+        font-size: 3rem;
+        color: #163A24;
+        font-family: 'Fredoka One';
+        font-weight: lighter;
+    }
+    
+    .overlay-description{
+        font-family: 'Quicksand';
+        font-weight: 500;
+        font-size: 1.1rem;
+        margin: 5px 0;
+        padding: 0 50px;
+        text-align: center;
+        color: #f0ecd7;
+    }
+    
+    .overlay-panel a{
+        font-family: 'Syne', sans-serif;
+        width: 380px;
+        height: 50px;
+        border: none;
+        outline: none;
+        border-radius: 55px;
+        cursor: pointer;
+        background-color: #163A24;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 1.2rem;
+        margin: 10px 0;
+        transition: 0.4s;
+        letter-spacing: 2px;
+        text-decoration: none;
+        color: #f0ecd7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .overlay-panel a:hover{
+        background-color: #f0ecd7;
+        color: #163A24;
+    }
+    
+    .overlay-panel a:active{
+        transform: scale(0.95);
+    }
+    
+    .overlay-panel a:focus{
+        outline: none;
+    }    
+}
+
+@media screen and (max-width: 768px){
+    .overlay-panel{
+        display: none;
+    }
+}
+
