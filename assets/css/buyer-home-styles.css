@@ -1,0 +1,238 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f1f1f1;
+}
+
+.banner-section{
+    padding: 0 8rem;
+}
+
+.banner-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner{
+    margin-top: 2rem;
+    width: 100%;
+    height: 200px;
+    background-color: #197730;
+    display: flex;
+    justify-content: center;
+    background: url(/img/homepage-banner.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Product Slider */
+#slider{
+    margin: 2rem;
+    padding: 0 12rem;
+}
+
+.slider-title h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.3rem;
+    color: #2B2B2B;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-between;
+    row-gap: 1rem;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card{
+    width: 250px;
+    background-color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-img {
+    width: 250px;
+    height: 150px;
+    position: relative;
+    background-color: #F9BD38;
+}
+
+.slide-img img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.detail-box {
+    width: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.seller-details{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.seller-details a{
+    color: #000000;
+    font-weight: 600;
+}
+
+.seller-details a:hover{
+    text-decoration: underline;
+}
+
+.seller-details img{
+    height: 35px;
+    width: 35px;
+    border-radius: 100%;
+}
+
+.service-details{
+    width: 100%;
+    height: 40px;
+    margin: 1rem 0;
+    overflow: hidden;
+    /* white-space: nowrap;
+    text-overflow: ellipsis; */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.service-details a{
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.service-details a:hover{
+    text-decoration: underline;
+}
+
+.price-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.price-details h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    text-align: end;
+    font-weight: 700;
+}
+
+.price-details p{
+    font-size: 1.2rem;
+    text-align: end;
+}
+
+.overlayer{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(#F0703E 20%, #E48928 40%, #F9BD38 70%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-btn{
+    font-family: 'Syne', sans-serif;
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1B8436;
+    color: #f0ecd7;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, .2);
+}
+
+.view-btn:hover{
+    color: black;
+    background-color: #f0ecd7;
+    transition: all ease 0.3s;
+}
+
+.overlayer {
+    visibility: hidden;
+}
+
+.slide-img:hover .overlayer {
+    visibility: visible;
+    animation: fade 0.5s;
+}
+
+.prev-btn,
+.nxt-btn {
+    border: none;
+    width: 2vw;
+    height: 51%;
+    position: absolute;
+    top: 629px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    cursor: pointer;
+    z-index: 8;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.nxt-btn {
+    right: 0;
+}
+
+.prev-btn img,
+.nxt-btn img {
+    opacity: 0.2;
+}
+
+.prev-btn:hover img,
+.nxt-btn:hover img {
+    opacity: 1;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

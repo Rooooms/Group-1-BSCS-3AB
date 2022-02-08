@@ -1,0 +1,239 @@
+body{
+    background-color: #f1f1f1;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;  
+}
+
+button{
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.seller-profile{
+    display: flex;
+}
+
+@media only screen and (max-width: 768px){
+    .seller-profile{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.container{
+    width: 1000px;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+/* PROFILE SECTION */
+.profile-card{
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.extra-profile-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.7rem 0;
+}
+
+.extra-profile-details i{
+    font-size: 1.3rem;
+    color: #1B8436;
+}
+
+.extra-profile-details p{
+    text-align: end;
+}
+
+.profile-icon-container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-icon{
+    width: 200px;
+    height: 200px;
+}
+
+.profile-icon img{
+    width: 200px;
+    height: 200px;
+    background: #197730;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.name-with-button{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.name-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-actions{
+    margin-top: 1rem;
+}
+
+.name-container a{
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #1B8436;
+    color: #F0ECD7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.5rem 0.8rem;
+    transition: 0.4s;
+}
+
+.name-container a:hover{
+    background-color: #197730;
+}
+
+/* .description{
+    width: 50%;
+    background-color: #197730;
+} */
+
+.profile-details h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.profile-details h4{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.profile-details p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.4rem;
+}
+
+.location{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #197730;
+}
+
+.location-text{
+    font-family: 'Montserrat', sans-serif;    
+    margin-left: 0.5rem;
+}
+
+.location-text p{
+    margin: 0;
+}
+
+@media only screen and (max-width: 768px){
+    .profile-card{
+        flex-direction: column;
+    }
+
+    .name-with-button{
+        margin: 10px;
+    }
+
+    .name-container{
+        flex-direction: column;
+    }
+
+    .name-container a{
+        margin: 0;
+    }
+
+    .profile-details{
+        margin: 0;
+        text-align: center;
+    }
+
+    .location{
+        justify-content: center;
+    }
+}
+
+/* NAVIGATION SECTION */
+.navigation-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-container a{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #1B8436;
+    color: #F0ECD7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 200px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: 0.4s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width: 768px){
+    .navigation-container{
+        flex-direction: column;
+    }
+
+    .navigation-container a{
+        margin: 5px;
+        width: 100%;
+    }
+}
+
+.navigation-container a:hover{
+    background-color: #197730;
+}
+
+@media only screen and (max-width: 768px){
+    .seller-profile{
+        padding: 0 3rem;
+    }
+    .container{
+        width: 100%;
+    }
+}
