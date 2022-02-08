@@ -8,7 +8,7 @@
     <title>GoCreate | Get Started</title>
 
     <!-- ===== ICON ===== -->
-    <link rel="icon" type="image/png" href="./img/logo.svg">
+    <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/logo.svg')?>">
 
     <!-- ===== BOX ICONS ===== -->
     <script src="https://kit.fontawesome.com/871663cc04.js" crossorigin="anonymous"></script>
