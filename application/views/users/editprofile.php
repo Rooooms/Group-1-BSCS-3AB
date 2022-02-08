@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoCreate | Home</title>
+    <title>GoCreate | Edit Profile</title>
 
     <!-- ===== ICON ===== -->
-    <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/logo.svg');?>">
+    <link rel="icon" type="image/png" href="img/logo.svg">
 
-    <!-- ===== WEB ICONS ===== -->
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- ===== BOX ICONS ===== -->
+    <script src="https://kit.fontawesome.com/871663cc04.js" crossorigin="anonymous"></script>
 
     <!-- ===== GOOGLE FONTS ===== -->
     <link
@@ -22,28 +21,25 @@
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/nav-styles.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/footer-styles.css')?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/buyer-home-styles.css')?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/lightslider.css')?>">
-
-    
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/settings-styles.css')?>">
 </head>
-
 
 <body>
     <div class="big-wrapper light">
         <header>
             <div class="nav-container">
                 <div class="logo">
-                    <a href="<?php echo base_url()."users/userSort"?>"><img src="<?php echo base_url('assets/img/buyer-logo.svg')?>" class="header-logo"></a>
+                    <!-- ===== IF BUYER, REDIRECT TO BUYERHOMEPAGE, IF SELLER, REDIRECT TO SELLERHOMEPAGE ===== -->
+                    <a href="<?php echo base_url()."users/buyerhomepage"?>"><img src="<?php echo base_url('assets/img/buyer-logo.svg')?>" class="header-logo"></a>
                 </div>
 
                 <div class="links">
                     <ul>
                         <li><a href="<?php echo base_url()."users/buyerhomepage"?>">Home</a></li>
-                        <li><a href="<?php echo base_url()."messaging/inbox"?>">Messages</a></li>
-                        <li><a href="<?php echo base_url()."categories/tradsarts"?>">Browse by Category</a></li>
+                        <li><a href="#">Messages</a></li>
+                        <li><a href="<?php echo base_url()."categories/"?>">Browse by Category</a></li>
                         <li><a href="<?php echo base_url()."users/profile"?>">Profile</a></li>
-                        <li><a href="<?php echo base_url()."users/buyereditprofile"?>">Settings</a></li>
+                        <li><a href="buyer-settings.html">Settings</a></li>
                         <li><a href="<?php echo base_url()."users/logout"?>">Log Out</a></li>
                     </ul>
                 </div>
@@ -57,75 +53,96 @@
         </header>
     </div>
 
+    <section class="settings">
+        <div class="settings-container">
+            <div class="settings-options">
+                <ul>
+                    <li><a href="buyer-settings.html">Edit Profile</a></li>
+                    <li><a href="buyer-change-password.html">Change Password</a></li>
+                    <li><a href="buyer-delete-account.html">Delete Account</a></li>
+                </ul>
+            </div>
 
+            <div class="edit-profile">
+                <div class="edit-profile-container">
+                    <div class="form-container">
+                        <form action="#">
+                            <h2>Edit Profile</h2>
+                            <div class="input-field">
+                                <p class="profile-photo">Profile Photo</p>
+                                <div class="container">
+                                    <div class="wrapper">
+                                        <div class="image">
+                                            <img src="<?php echo $user['profilepic']?>" id="photo">
+                                        </div>
 
+                                        <!-- <div class="content">
+                                            <div class="icon">
+                                                <i class="fas fa-cloud-upload-alt"></i>
+                                            </div>
+                                            <div class="text">
+                                                Upload your profile picture <br><i>Photo must be in 1:1 ratio</i>
+                                            </div>
+                                        </div> -->
 
-    <section id="slider">
-        <div class="slider-title">
-            <h2>Discover</h2>
-        </div>
-        <?php $i = 0; ?>
-        <div class="card-container">
-            <?php if (empty($project) != 0) { ?>
-                <p><?php echo "No Records Found" ?></p>
-            <?php } else { ?>
-                <?php for ($i = 0; $i < 8; $i++) { ?>
-                    <?php if (isset($project[$i]['serviceImage'])) { ?>
-                        <div class="card">
-                            <div class="slide-img">
-                                <img src="<?php echo $project[$i]['serviceImage'] ?>" alt="">
-                                <div class="overlayer">
-                                    <a href="<?php echo base_url() . "project/orderprocess/" . $project[$i]['serviceId'] ?>" class="view-btn">View More</a>
+                                        <div id="cancel-btn">
+                                            <i class="fas fa-times"></i>
+                                        </div>
+
+                                        <!-- <div class="file-name">
+                                            File name here
+                                        </div> -->
+                                    </div>
+                                    <button onclick="defaultBtnActive()" id="custom-btn">Upload Photo</button>
+                                    <input id="default-btn" type="file" accept="image/*" hidden>
                                 </div>
                             </div>
 
-                            <div class="detail-box">
-                                <div class="detail-box-container">
-                                    <div class="seller-details">
-                                        <img src="<?= $project[$i]['sellerpic'] ?>" alt="profile">
-                                        <a href="browse-seller.html"><?= $project[$i]['seller'] ?></a>
-                                    </div>
-
-                                    <div class="service-details">
-                                        <a href="browse-service.html">And somewhere between our worlds, there's love.</a>
-                                    </div>
-
-                                    <div class="price-details">
-                                        <h2>PRICE</h2>
-                                        <p>PHP<?= $project[$i]['servicePrice'] ?>.00</p>
-                                    </div>
-                                </div>
+                            <div class="input-field">
+                                <p class="name">Full Name</p>
+                                <input type="text">
                             </div>
+
+                            <div class="input-field">
+                                <p class="username">Username</p>
+                                <input type="text">
+                            </div>
+
+                            <div class="input-field">
+                                <p class="e-mail">E-mail</p>
+                                <input type="email">
+                            </div>
+
+                            <div class="input-field">
+                                <p class="phone-number">Phone Number</p>
+                                <input type="tel">
+                            </div>
+
+                            <div class="input-field">
+                                <p class="text">Location</p>
+                                <input type="text">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="buttons-container">
+                            <a href="buyer-profile.html">DISCARD</a>
+                            <a href="#">SAVE CHANGES</a>
                         </div>
-                    <?php } else { ?>
-                        <div class="card">
-                            <div class="slide-img">
-                                <img src="<?= base_url() . 'assets/img/temp.jpg' ?>" alt="">
-                            </div>
+                    </div>
+                </div>
+            </div>
 
-                            <div class="detail-box">
-
-
-                                <div class="service-details">
-                                    <p>No other Records Found</p>
-                                </div>
-
-                            </div>
-                        </div>
         </div>
-    <?php } ?>
-<?php } ?>
-<?php } ?>
-</div>
     </section>
-
 
     <!-- FOOTER STARTS HERE -->
 
     <div class="creator-popup center roms-popup">
         <div class="creator-grid">
             <div class="creator-img">
-                <img src="/img/creator-roms.gif">
+                <img src="/img/creator-img.jpg">
             </div>
 
             <div class="creator-about">
@@ -138,9 +155,12 @@
                 </div>
 
                 <div class="creator-details">
-                    <div class="creator-links">
-                        <a href="https://www.facebook.com/romeo.rojo.5" target="_blank"><i class='bx bxl-facebook'></i></a>
-                    </div>
+                    <ul>
+                        <li><a href="https://www.instagram.com/seanabalora/" target="_blank"
+                                class="underline">Instagram</a></li>
+                        <li><a href="https://abasushi.github.io/seanabalora/" target="_blank"
+                                class="underline">Roms.</a></li>
+                    </ul>
                 </div>
 
                 <div class="creator-details dismiss-btn">
@@ -149,10 +169,11 @@
             </div>
         </div>
     </div>
+
     <div class="creator-popup center dylan-popup">
         <div class="creator-grid">
             <div class="creator-img">
-                <img src="/img/creator-dylan.gif">
+                <img src="/img/creator-img.jpg">
             </div>
 
             <div class="creator-about">
@@ -161,18 +182,17 @@
                 </div>
 
                 <div class="creator-details">
-                    <p>GoCreate Backend Boi</p>
+                    <p>Nation's Backend</p>
                 </div>
 
                 <div class="creator-details">
-                    <div class="creator-links">
-                        <a href="https://www.facebook.com/dylan.jabla/" target="_blank"><i class='bx bxl-facebook'></i></a>
-                        <a href="https://www.instagram.com/dylan.jabla//" target="_blank"><i class='bx bxl-instagram'></i></a>
-                        <a href="https://djabla.github.io/" target="_blank"><i class='bx bxl-github'></i></a>
-
-                    </div>
+                    <ul>
+                        <li><a href="https://www.instagram.com/seanabalora/" target="_blank"
+                                class="underline">Instagram</a></li>
+                        <li><a href="https://abasushi.github.io/seanabalora/" target="_blank"
+                                class="underline">Dylan.</a></li>
+                    </ul>
                 </div>
-
 
                 <div class="creator-details dismiss-btn">
                     <button id="dylan-dismiss-btn">Close</button>
@@ -180,10 +200,11 @@
             </div>
         </div>
     </div>
+
     <div class="creator-popup center errol-popup">
         <div class="creator-grid">
             <div class="creator-img">
-                <img src="/img/creator-errol.gif">
+                <img src="/img/creator-img.jpg">
             </div>
 
             <div class="creator-about">
@@ -192,15 +213,16 @@
                 </div>
 
                 <div class="creator-details">
-                    <p>Your friendly programmer</p>
+                    <p>Oh? You mean Backend King?</p>
                 </div>
 
                 <div class="creator-details">
-                    <div class="creator-links">
-                        <a href="https://www.facebook.com/erroljohn.lagera" target="_blank"><i class='bx bxl-facebook'></i></a>
-                        <a href="https://www.instagram.com/yieeej/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                        <a href="https://lorrenhoj.github.io/lagera/" target="_blank"><i class='bx bxl-github'></i></a>
-                    </div>
+                    <ul>
+                        <li><a href="https://www.instagram.com/seanabalora/" target="_blank"
+                                class="underline">Instagram</a></li>
+                        <li><a href="https://abasushi.github.io/seanabalora/" target="_blank"
+                                class="underline">Lagera.</a></li>
+                    </ul>
                 </div>
 
                 <div class="creator-details dismiss-btn">
@@ -209,10 +231,11 @@
             </div>
         </div>
     </div>
+
     <div class="creator-popup center aba-popup">
         <div class="creator-grid">
             <div class="creator-img">
-                <img src="/img/creator-aba.gif">
+                <img src="/img/creator-img.jpg">
             </div>
 
             <div class="creator-about">
@@ -225,10 +248,12 @@
                 </div>
 
                 <div class="creator-details">
-                    <div class="creator-links">
-                        <a href="https://www.instagram.com/seanabalora/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                        <a href="https://abasushi.github.io/seanabalora/" target="_blank"><i class='bx bxl-github'></i></a>
-                    </div>
+                    <ul>
+                        <li><a href="https://www.instagram.com/seanabalora/" target="_blank"
+                                class="underline">Instagram</a></li>
+                        <li><a href="https://abasushi.github.io/seanabalora/" target="_blank"
+                                class="underline">Aristotle.</a></li>
+                    </ul>
                 </div>
 
                 <div class="creator-details dismiss-btn">
@@ -241,7 +266,7 @@
     <div class="creator-popup center ros-popup">
         <div class="creator-grid">
             <div class="creator-img">
-                <img src="/img/creator-ros.gif">
+                <img src="/img/creator-img.jpg">
             </div>
 
             <div class="creator-about">
@@ -254,10 +279,12 @@
                 </div>
 
                 <div class="creator-details">
-                    <div class="creator-links">
-                        <a href="https://www.instagram.com/rosmellecaves/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                        <a href="https://www.linkedin.com/in/rosmelle-cuevas-b825921ba/" target="_blank"><i class='bx bxl-linkedin'></i></i></a>
-                    </div>
+                    <ul>
+                        <li><a href="https://www.instagram.com/seanabalora/" target="_blank"
+                                class="underline">Instagram</a></li>
+                        <li><a href="https://abasushi.github.io/seanabalora/" target="_blank"
+                                class="underline">tigerlilith.</a></li>
+                    </ul>
                 </div>
 
                 <div class="creator-details dismiss-btn">
@@ -270,7 +297,7 @@
     <div class="creator-popup center saey-popup">
         <div class="creator-grid">
             <div class="creator-img">
-                <img src="/img/creator-saey.gif">
+                <img src="/img/creator-img.jpg">
             </div>
 
             <div class="creator-about">
@@ -279,14 +306,16 @@
                 </div>
 
                 <div class="creator-details">
-                    <p>Cutie</p>
+                    <p>Responsiveness expert coming through!</p>
                 </div>
 
                 <div class="creator-details">
-                    <div class="creator-links">
-                        <a href="https://www.instagram.com/seymondcute/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                        <a href="https://saeymondserrano.github.io/Portfolio/" target="_blank"><i class='bx bxl-github'></i></a>
-                    </div>
+                    <ul>
+                        <li><a href="https://www.instagram.com/seanabalora/" target="_blank"
+                                class="underline">Instagram</a></li>
+                        <li><a href="https://abasushi.github.io/seanabalora/" target="_blank"
+                                class="underline">saeymond.</a></li>
+                    </ul>
                 </div>
 
                 <div class="creator-details dismiss-btn">
@@ -309,8 +338,7 @@
                             <li><a href="category-digital-art.html" class="underline">Digital Art</a></li>
                             <li><a href="category-graphic-design.html" class="underline">Graphic Design</a></li>
                             <li><a href="category-photography.html" class="underline">Photography</a></li>
-                            <li><a href="category-publication-material.html" class="underline">Publication Material</a>
-                            </li>
+                            <li><a href="category-publication-material.html" class="underline">Publication Material</a></li>
                             <li><a href="category-traditional-art.html" class="underline">Traditional Art</a></li>
                             <li><a href="category-typography.html" class="underline">Typography</a></li>
                             <li><a href="category-website-design.html" class="underline">Website Design</a></li>
@@ -320,15 +348,9 @@
                     <div class="footer-column">
                         <h3>Creators</h3>
                         <ul>
-                            <li>
-                                <h5>Backend</h5>
-                            </li>
                             <li><button class="underline" id="creator-roms">Rojo</button></li>
                             <li><button class="underline" id="creator-dylan">Jabla</button></li>
                             <li><button class="underline" id="creator-errol">Lagera</button></li>
-                            <li>
-                                <h5>Frontend</h5>
-                            </li>
                             <li><button class="underline" id="creator-aba">Abalora</button></li>
                             <li><button class="underline" id="creator-ros">Cuevas</button></li>
                             <li><button class="underline" id="creator-saey">Serrano</button></li>
@@ -338,10 +360,9 @@
                     <div class="footer-column">
                         <h3>Socials</h3>
                         <ul>
-                            <li><a href="https://www.facebook.com/GoCreatePhilippines/?ref=page_internal" target="_blank" class="underline">Facebook</a></li>
-                            <li><a href="https://www.instagram.com/thegocreate/" target="_blank" class="underline">Instagram</a></li>
-                            <li><a href="https://twitter.com/thegocreate" target="_blank" class="underline">Twitter</a>
-                            </li>
+                            <li><a href="#" class="underline">Facebook</a></li>
+                            <li><a href="#" class="underline">Instagram</a></li>
+                            <li><a href="#" class="underline">Twitter</a></li>
                         </ul>
 
                         <div class="say-hi">
@@ -352,7 +373,7 @@
                                 <div class="popup">
                                     <h4>Copied to Clipboard!</h4>
                                 </div>
-                            </div>
+                            </div>    
                         </div>
                     </div>
                 </div>
@@ -363,7 +384,7 @@
             <div class="footer-rights-container">
                 <div class="footer-logo">
                     <a href="#">
-                        <img src="img/logo.svg">
+                        <img src="<?php echo base_url('assets/img/logo.svg')?>">
                     </a>
                     <h3>GoCreate</h3>
                 </div>
@@ -375,9 +396,11 @@
         </div>
     </footer>
 
+
     <!-- ===== JS ===== -->
-    <script src="<?php echo base_url(); ?>assets/js/nav-script.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/footer-script.js"></script>
+    <script src="<?php echo base_url();?>js/upload.js"></script>
+    <script src="<?php echo base_url();?>js/nav-script.js"></script>
+    <script src="<?php echo base_url();?>js/footer-script.js"></script>
 </body>
 
 </html>
