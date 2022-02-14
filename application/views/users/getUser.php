@@ -1,7 +1,7 @@
 <div>
 <?=isset($message) ? $message:"";?>
 <br>
-<a href="/php/users/signup">Add User</a>
+<a href="/php/users/Signup">Add User</a>
 <br>
 <br>
 <table>

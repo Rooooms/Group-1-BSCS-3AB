@@ -13,7 +13,6 @@ class Users extends CI_Controller {
 		if(isset($data) && $data != null){
 			$this->load->model('usersModel');
 			$this->usersModel->createUser($data);
-			$this->load->view('users/signup');
 		}
 		$this->load->view('users/signup');
 	}

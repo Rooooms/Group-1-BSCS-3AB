@@ -3,7 +3,7 @@
     $this->load->view('templates/header');
 ?>
 
-<p>Sign Up Bitches</p>
+<p>Sign Up</p>
     <form  method="post">
         <input type="text" name="usersName" placeholder="Full Name"required><br>
         <input type="email" name="usersEmail" placeholder="Email"required><br>
@@ -13,6 +13,7 @@
         <input type="radio" name="usersCategory" id="buyerRadio" value="Buyer" required>Buyer </input>
         <input type="radio" name="usersCategory" id="sellerRadio" value="Seller" required>Seller</input> <br>
         <input type="submit" value="Submit">
+        <a href="/php/users/getUser">Back to list of users</a>
     </form>
 
 <?php
