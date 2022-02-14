@@ -17,7 +17,7 @@ class Users extends CI_Controller {
 		}
 		$this->load->view('users/signup');
 	}
-	
+
 	public function login(){
 		$data = array();
 		$data = $this->input->post();
@@ -33,6 +33,7 @@ class Users extends CI_Controller {
 				$_SESSION['usersUid'] = $return[0]['usersUid'];
 				redirect('users/homepage');
 			}
+		
 		}
 
 		$this->load->view('users/login');
@@ -48,6 +49,39 @@ class Users extends CI_Controller {
         session_destroy();
         redirect(base_url());
     }
+	public function updateprofile($usersId = null){
+		$this->load->model('usersModel');
+		$user = $this->usersModel->getUsers($usersId);
+
+		$output['user'] = $user[0];
+
+		$this->load->view('users/updateprofile', $output);
+	}   
+	public function updateUser(){
+		$data = array();
+		$data = $this->input->post();
+		if(isset($data) && $data != null)
+			$this->load->model('usersModel');
+		
+		$this->usersModel->updateUser($data);
+
+	}
+	public function getUser()
+	{
+		$this->load->model('usersModel');
+
+		$users = $this->usersModel->getUsers();
+		$output['users'] = $users;
+
+		$this->load->view('/users/getUser', $output);
+	}
+	public function updateStatus($usersId, $status){
+		$this->load->model('usersModel');
+
+		$this->usersModel->updateUserStatus($usersId, $status);
+		
+		redirect('/users/getUser');
+	}
 }
-    
+	 
    

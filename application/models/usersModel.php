@@ -83,6 +83,31 @@ class UsersModel extends CI_Model {
 			return false;
 		}
 	}
+	public function getUsers($usersId = null){
+		if(isset($usersId) && $usersId != null) {
+			$this->db->where('usersId', $usersId);
+		}
+		$query = $this->db->get($this->table);
 
+		return $query->result_array();
+	}
 	
+	public function updateUserStatus($usersId, $status){
+		$this->db->where('usersId', $usersId);
+		unset($data['usersId']);
+
+		$data['status'] = $status;
+		$this->db->update($this->table, $data);
+
+		return;
+	}	
+	public function updateUser($data){
+		$this->db->where('usersId', $data['usersId']);
+		unset($data['usersId']);
+
+		$this->db->update($this->table, $data);
+
+		echo $this->db->last_query();
+		exit;
+	}
 }
